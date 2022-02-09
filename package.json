@@ -1,0 +1,23 @@
+{
+  "name": "quiz_challenge",
+  "version": "1.0.0",
+  "description": "",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/elhamhsnpr/Quiz_Challenge.git"
+  },
+  "author": "Elham",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/elhamhsnpr/Quiz_Challenge/issues"
+  },
+  "homepage": "https://github.com/elhamhsnpr/Quiz_Challenge#readme",
+  "dependencies": {
+    "express": "^4.17.2",
+    "mongoose": "^6.2.1"
+  }
+}
