@@ -4,8 +4,12 @@ const mongoose = require("mongoose");
 const User = mongoose.model(
     "User",
     new mongoose.Schema({
-        username: String,
-        email: String,
+        email: {
+            type: String,
+            required: true,
+            match: /.+\@.+\..+/,
+            unique: true
+        },
         password: String,
 
     })
