@@ -1,16 +1,24 @@
+const { user } = require("../Models");
 const db = require("../Models");
 
 const Quiz = db.quiz;
 
 exports.createQuiz = (req, res) => {
 
+
+
     const quiz = new Quiz({
         question: req.body.question,
-        answers: req.body.answers
+        answers: req.body.answers,
+        userId: req.token.id
+
+
+
     });
 
 
     console.log(quiz)
+
 
     quiz.save((err, quiz) => {
 
@@ -24,6 +32,8 @@ exports.createQuiz = (req, res) => {
 
 
     })
+
+    // res.send(200)
 
 
 

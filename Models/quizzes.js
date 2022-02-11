@@ -1,11 +1,12 @@
 const mongoose = require("mongoose");
+const User = require("./users");
 
 const Quiz = mongoose.model(
     "Quiz",
 
     new mongoose.Schema({
-        question: String,
 
+        question: String,
         answers: [{
             text: String,
             isCorrect: {
@@ -14,7 +15,11 @@ const Quiz = mongoose.model(
             }
 
 
-        }]
+        }],
+        userId: {
+            type: mongoose.Schema.Types.ObjectId,
+            ref: User
+        }
 
     })
 
