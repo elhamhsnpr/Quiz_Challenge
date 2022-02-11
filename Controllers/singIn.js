@@ -37,7 +37,7 @@ exports.singIn = (req, res) => {
         let token = JWT.GenerateToken(users);
 
         //Save token in the cookie
-        res.cookie('authcookie', token, { maxAge: 90000 });
+        // res.cookie('authcookie', token, { maxAge: 90000 });
 
 
 

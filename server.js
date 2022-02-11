@@ -1,9 +1,10 @@
 const express = require("express");
 const bodyParser = require('body-parser')
 const db = require("./Models");
-// const mongoose = require("mongoose");
+
 const singUp = require("./Routers/signUp");
 const singIn = require("./Routers/singIn");
+const createQuiz = require("./Routers/createQuiz");
 
 const app = express();
 const port = 3000;
@@ -14,6 +15,7 @@ app.use(bodyParser.json());
 
 app.use(singUp);
 app.use(singIn);
+app.use(createQuiz);
 
 // connect to mongoDB by using mongoose
 db.mongoose

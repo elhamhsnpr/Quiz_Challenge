@@ -10,7 +10,11 @@ const User = mongoose.model(
             match: /.+\@.+\..+/,
             unique: true
         },
-        password: String,
+        password: {
+            type: String,
+            required: true,
+            
+        },
 
     })
 );
