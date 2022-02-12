@@ -5,16 +5,18 @@ const Quiz = db.quiz;
 
 exports.createQuiz = (req, res) => {
 
+    let quizID = 0;
+
     const quiz = new Quiz({
-        question: req.body.question,
-        answers: req.body.answers,
+    
+        title: req.body.title,
+        description: req.body.description,
+        quiz: req.body.quiz,
         userId: req.token.id
 
 
 
     });
-
-    // console.log(quiz)
 
     quiz.save((err, quiz) => {
 
