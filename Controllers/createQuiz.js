@@ -5,8 +5,6 @@ const Quiz = db.quiz;
 
 exports.createQuiz = (req, res) => {
 
-
-
     const quiz = new Quiz({
         question: req.body.question,
         answers: req.body.answers,
@@ -16,9 +14,7 @@ exports.createQuiz = (req, res) => {
 
     });
 
-
-    console.log(quiz)
-
+    // console.log(quiz)
 
     quiz.save((err, quiz) => {
 
@@ -32,9 +28,5 @@ exports.createQuiz = (req, res) => {
 
 
     })
-
-    // res.send(200)
-
-
 
 };

@@ -6,13 +6,17 @@ const Quiz = mongoose.model(
 
     new mongoose.Schema({
 
-        question: String,
+        question: {
+            type: String,
+            required: true,
+        },
         answers: [{
             text: String,
             isCorrect: {
                 type: Boolean,
                 default: false
-            }
+            },
+            required: true,
 
 
         }],
