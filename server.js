@@ -5,6 +5,7 @@ const db = require("./Models");
 const singUp = require("./Routers/signUp");
 const singIn = require("./Routers/singIn");
 const createQuiz = require("./Routers/createQuiz");
+const getQuizByTitle = require("./Routers/getQuiz");
 
 const app = express();
 const port = 3000;
@@ -16,6 +17,7 @@ app.use(bodyParser.json());
 app.use(singUp);
 app.use(singIn);
 app.use(createQuiz);
+app.use(getQuizByTitle);
 
 // connect to mongoDB by using mongoose
 db.mongoose

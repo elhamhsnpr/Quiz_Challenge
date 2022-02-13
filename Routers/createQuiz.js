@@ -4,7 +4,7 @@ const jwt = require('../Utils/jwt');
 
 const router = express.Router();
 
-router.post('/create', jwt.verifyToken, createQuiz);
+router.post('/quiz', jwt.verifyToken, createQuiz);
 
 
 module.exports = router;

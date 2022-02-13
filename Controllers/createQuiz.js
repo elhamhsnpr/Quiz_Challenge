@@ -1,11 +1,10 @@
-const { user } = require("../Models");
 const db = require("../Models");
 
 const Quiz = db.quiz;
 
 exports.createQuiz = (req, res) => {
 
-    let quizID = 0;
+    // let quizID = 0;
 
     const quiz = new Quiz({
     

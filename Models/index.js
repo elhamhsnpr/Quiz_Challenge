@@ -4,6 +4,6 @@ const mongoose = require("mongoose");
 const db = {};
 db.mongoose = mongoose;
 db.user = require("./users");
-db.quiz = require("./quizzes");
+db.quiz = require("./quiz");
 
 module.exports = db;
