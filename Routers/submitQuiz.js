@@ -1,10 +1,10 @@
 const express = require("express");
-const { createQuiz } = require("../Controllers/createQuiz");
+const { submitQuiz } = require("../Controllers/submitQuiz");
 const jwt = require('../Utils/jwt');
 
 const router = express.Router();
 
-router.post('/quiz/create', jwt.verifyToken, createQuiz);
+router.post('/quiz/submit', jwt.verifyToken, submitQuiz);
 
 
 module.exports = router;
