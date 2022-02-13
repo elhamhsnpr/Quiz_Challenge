@@ -6,7 +6,8 @@ const singUp = require("./Routers/signUp");
 const singIn = require("./Routers/singIn");
 const createQuiz = require("./Routers/createQuiz");
 const getQuiz = require("./Routers/getQuiz");
-const qetQuizByTitle = require("./Routers/getQuizByTitle");
+const getQuizByTitle = require("./Routers/getQuizByTitle");
+const getQuizById = require("./Routers/getQuizById");
 
 
 const app = express();
@@ -20,7 +21,8 @@ app.use(singUp);
 app.use(singIn);
 app.use(createQuiz);
 app.use(getQuiz);
-app.use(qetQuizByTitle);
+app.use(getQuizByTitle);
+app.use(getQuizById);
 
 // connect to mongoDB by using mongoose
 db.mongoose

@@ -4,7 +4,7 @@ const { getQuizByTitle } = require("../Controllers/getQuizByTitle");
 
 const router = express.Router();
 
-router.get('/quiz/:title', getQuizByTitle);
+router.get('/quizByTitle/:title', getQuizByTitle);
 
 
 module.exports = router;

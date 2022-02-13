@@ -2,12 +2,12 @@ const db = require("../Models");
 
 const Quiz = db.quiz;
 
-exports.getQuiz= (req, res) => {
+exports.getQuizById = (req, res) => {
 
+    const _id = req.params.id
+    
 
-    const { page = 1, limit = 1 } = req.query;
-
-    Quiz.find().select('_id title description ').limit(limit * 1).skip((page - 1) * limit).exec((err, result) => {
+    Quiz.findById({ _id }).exec((err, result) => {
 
         if (err) {
             console.log(err);
@@ -21,4 +21,5 @@ exports.getQuiz= (req, res) => {
         return res.status(200).send({ data: result });
 
     })
+    return res.status(200)
 }
