@@ -13,14 +13,17 @@ const Quiz = mongoose.model(
         description: {
             type: String
         },
-        score: {
-            type: Number,
-            required: true,
-        },
-        completion:{
-            type:Number,
-            required:true
-        },
+        // score: {
+        //     type: Number,
+
+        // },
+        // completion: {
+        //     type: Number,
+
+        // },
+        // attempt: {
+        //     type: Number,
+        // },
         quiz: [{
 
             question: {
@@ -47,7 +50,7 @@ const Quiz = mongoose.model(
             type: mongoose.Schema.Types.ObjectId,
             ref: User
         },
-       
+
 
     })
 
