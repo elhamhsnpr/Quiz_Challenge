@@ -21,11 +21,13 @@ exports.submitQuiz = (req, res) => {
 
     Quiz.findOne({ _id: req.body.quizId }).exec((err, quiz) => {
 
+
         if (err) {
-            console.log(err);
+
             return res.status(500).send({ message: err });
 
         }
+
         if (!quiz) {
             return res.status(404).send({ message: "Quiz not fount" });
         }
@@ -36,14 +38,16 @@ exports.submitQuiz = (req, res) => {
         //calculate the quiz score, each of the question have 1 point, so quiz score calculate by the number of the question * 1.
         let totalScore = quiz.quiz.length * 1;
 
-
         // the answers have the isCorrect field to verify the correct answer 
         // for ech question I compare the user's answer and correct answer,
         // if the user chooses the correct answer, user scores increase.
+
         for (q of quiz.quiz) {
 
-            if (q._id != quizResult[i].questionId)
-                return res.send(500);
+            if (q._id != quizResult[i].questionId) {
+
+                return res.send(500)
+            }
 
             for (ans of q.answers) {
                 if (quizResult[i].answerId == ans._id && ans.isCorrect == true) {
@@ -52,6 +56,7 @@ exports.submitQuiz = (req, res) => {
             }
             i++;
         };
+
 
         // the questions and the user's answers, store as list dictionary in DB,
         // because the users can find out their answers for each question.
@@ -74,7 +79,7 @@ exports.submitQuiz = (req, res) => {
 
 
             if (err) {
-                console.log(err);
+
                 return res.status(500).send({ message: err });
 
             }
@@ -100,15 +105,11 @@ exports.submitQuiz = (req, res) => {
 
                     })
 
-                    stat.save((err, stat) => {
-                        console.log(stat)
-                    })
+                    stat.save();
 
                 } else {
 
-                    Stat.updateMany({ quizId: result.quizId }, { $inc: { attempt: 1 }, completion: newCompletion }).exec((err, c) => {
-                        console.log(c)
-                    })
+                    Stat.updateMany({ quizId: result.quizId }, { $inc: { attempt: 1 }, completion: newCompletion }).exec()
                 }
 
 
