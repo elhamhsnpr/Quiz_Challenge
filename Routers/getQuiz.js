@@ -1,3 +1,4 @@
+//GetQuiz API
 const express = require("express");
 const { getQuiz} = require("../Controllers/getQuiz");
 

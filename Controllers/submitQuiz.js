@@ -1,3 +1,7 @@
+// users submit the quiz,
+// users choose the answers, for each question, they choose the correct answer,
+// they got score. the questions, user's answer, quizId and user's score store in quizResult collection.
+
 const db = require("../Models");
 
 const Result = db.quizResult;
@@ -13,16 +17,18 @@ exports.submitQuiz = (req, res) => {
     quizResult = req.body.quizResult;
 
 
-
-
-
     Quiz.findOne({ _id: req.body.quizId }).exec((err, quiz) => {
 
         let score = 0;
         let i = 0;
-        let totalScore = 1;
+
+        //calculate the quiz score, each of the question have 1 point, so quiz score calculate by the number of the question * 1.
+        let totalScore = quiz.quiz.length * 1;
 
 
+        // the answers have the isCorrect field to verify the correct answer 
+        // for ech question I compare the user's answer and correct answer,
+        // if the user chooses the correct answer, user scores increase.
         for (q of quiz.quiz) {
 
             if (q._id != quizResult[i].questionId)
@@ -34,9 +40,11 @@ exports.submitQuiz = (req, res) => {
                 }
             }
             i++;
-        }
+        };
 
-        // create dictionary key:questionId value:answerId
+        // the questions and the user's answers, store as list dictionary in DB,
+        // because the users can find out their answers for each question.
+        // dictionary key:questionId value:answerId
         let quizResultDic = Object.assign({}, ...quizResult.map((x) => ({ [x.questionId]: x.answerId })));
 
 
@@ -49,6 +57,7 @@ exports.submitQuiz = (req, res) => {
 
         });
 
+
         result.save((err, result) => {
 
             if (err) {
@@ -57,6 +66,8 @@ exports.submitQuiz = (req, res) => {
 
             }
 
+            // every time users submit the quiz, the attempt field increase 
+            // if the user's score in that quiz is equal with totalScore, that mean the user complete quiz successfully and the completion field increase
             Stat.findOne({ quizId: result.quizId }).exec((err, stat) => {
 
                 let newCompletion = 0;

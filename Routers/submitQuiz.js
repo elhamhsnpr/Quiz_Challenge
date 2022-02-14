@@ -1,3 +1,4 @@
+// submitQuiz API
 const express = require("express");
 const { submitQuiz } = require("../Controllers/submitQuiz");
 const jwt = require('../Utils/jwt');

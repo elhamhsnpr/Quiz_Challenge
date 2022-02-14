@@ -1,3 +1,4 @@
+//GetQuizById API
 const express = require("express");
 const { getQuizById } = require("../Controllers/getQuizById");
 

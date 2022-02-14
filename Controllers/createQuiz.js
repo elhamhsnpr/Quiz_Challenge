@@ -1,3 +1,7 @@
+// Users can creates their own quiz.
+// quiz includes several questions and each question has several answers, but the one of these answers is correct
+//  quiz stores in quizzes collection in DB
+
 const db = require("../Models");
 
 const Quiz = db.quiz;

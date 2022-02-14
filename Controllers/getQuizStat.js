@@ -1,3 +1,4 @@
+//users can view the stat of the quiz 
 const db = require("../Models");
 
 const Stat = db.quizStat;

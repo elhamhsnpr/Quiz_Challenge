@@ -13,17 +13,6 @@ const Quiz = mongoose.model(
         description: {
             type: String
         },
-        // score: {
-        //     type: Number,
-
-        // },
-        // completion: {
-        //     type: Number,
-
-        // },
-        // attempt: {
-        //     type: Number,
-        // },
         quiz: [{
 
             question: {

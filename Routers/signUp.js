@@ -1,3 +1,4 @@
+// SignUp API
 const express = require("express");
 const { singUp } = require("../Controllers/signUp");
 

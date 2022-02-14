@@ -1,3 +1,7 @@
+// User can create an account by email and password
+// password has to store hashed in DB, I used bcrypt library to hash the password
+// email and hashed password store in users collection
+
 const db = require("../Models");
 const bcrypt = require('bcrypt');
 

@@ -1,3 +1,5 @@
+// Users can view all the quizzes with the specific tile
+// users choose or search the specific title 
 const db = require("../Models");
 
 const Quiz = db.quiz;

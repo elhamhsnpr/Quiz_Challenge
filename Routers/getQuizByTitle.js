@@ -1,3 +1,4 @@
+//GetQuizByTitle API
 const express = require("express");
 const { getQuizByTitle } = require("../Controllers/getQuizByTitle");
 

@@ -1,3 +1,4 @@
+// getQuizStat API
 const express = require("express");
 const { getQuizStat } = require("../Controllers/getQuizStat");
 

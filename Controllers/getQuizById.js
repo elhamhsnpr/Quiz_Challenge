@@ -1,3 +1,5 @@
+// users can view the specific quiz that they choose
+
 const db = require("../Models");
 
 const Quiz = db.quiz;

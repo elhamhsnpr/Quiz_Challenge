@@ -1,3 +1,9 @@
+// User can singIn with email and password
+// At first, I check  the DB to find the user's data according the email,
+// If there isn't user by this email, user receive the Not Found error.
+// If there is user by this email, by using bcrypt library, the entered password compares with stored password,
+// when user enters correct password, token creates by using userId and email. now user singIn.
+
 const db = require("../Models");
 const bcrypt = require('bcrypt');
 const JWT = require("../Utils/jwt");
@@ -34,12 +40,11 @@ exports.singIn = (req, res) => {
             user: user.email,
 
         };
+
+        // token generates by GenerateToken() function. find this function in Utils/jwt.js.
         let token = JWT.GenerateToken(users);
 
-        //Save token in the cookie
-        // res.cookie('authcookie', token, { maxAge: 90000 });
-
-
+        
 
         return res.status(200).json({ data: user, accessToken: token });
     })
