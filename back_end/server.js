@@ -33,7 +33,7 @@ app.use(deleteQuiz);
 
 // connect to mongoDB by using mongoose
 db.mongoose
-    .connect(`mongodb://localhost:27017/quizChallenge`, {
+    .connect(`mongodb://mongodb:27017/quizChallenge`, {
         useNewUrlParser: true,
         useUnifiedTopology: true
     })
