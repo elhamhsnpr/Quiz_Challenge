@@ -13,11 +13,22 @@ const Stat = db.quizStat;
 exports.submitQuiz = (req, res) => {
 
 
+
     let quizResult = {};
     quizResult = req.body.quizResult;
 
 
+
     Quiz.findOne({ _id: req.body.quizId }).exec((err, quiz) => {
+
+        if (err) {
+            console.log(err);
+            return res.status(500).send({ message: err });
+
+        }
+        if (!quiz) {
+            return res.status(404).send({ message: "Quiz not fount" });
+        }
 
         let score = 0;
         let i = 0;
@@ -60,6 +71,8 @@ exports.submitQuiz = (req, res) => {
 
         result.save((err, result) => {
 
+
+
             if (err) {
                 console.log(err);
                 return res.status(500).send({ message: err });
@@ -100,6 +113,7 @@ exports.submitQuiz = (req, res) => {
 
 
             });
+
 
             return res.status(200).json({ data: result });
 

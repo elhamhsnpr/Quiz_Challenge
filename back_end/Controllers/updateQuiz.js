@@ -9,7 +9,7 @@ exports.updateQuiz = (req, res) => {
 
     let { title, description, quiz } = req.body;
 
-    Quiz.updateOne({ _id }, { title, description, quiz }).exec((err, quiz) => {
+    Quiz.findOneAndUpdate({ _id }, { title, description, quiz }).exec((err, quiz) => {
 
         if (err) {
             console.log(err);

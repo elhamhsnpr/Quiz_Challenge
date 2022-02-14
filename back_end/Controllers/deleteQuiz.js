@@ -8,7 +8,7 @@ exports.deleteQuiz = (req, res) => {
     let _id = req.params.id;
 
 
-    Quiz.deleteOne({ _id }).exec((err, quiz) => {
+    Quiz.findByIdAndDelete({ _id }).exec((err, quiz) => {
 
         if (err) {
             console.log(err);

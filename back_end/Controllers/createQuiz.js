@@ -8,8 +8,6 @@ const Quiz = db.quiz;
 
 exports.createQuiz = (req, res) => {
 
-
-
     const quiz = new Quiz({
     
         title: req.body.title,
