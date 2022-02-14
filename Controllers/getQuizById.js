@@ -17,7 +17,7 @@ exports.getQuizById = (req, res) => {
 
         }
         if (!result) {
-            return res.status(404).send({ message: "Quiz not fount with this title" });
+            return res.status(404).send({ message: "Quiz not fount" });
         }
 
         return res.status(200).send({ data: result });

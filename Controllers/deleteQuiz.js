@@ -1,15 +1,14 @@
-// users can manipulate their created quiz , they can update the quiz
+// users can manipulate their created quiz , they can delete the quiz
 const db = require("../Models");
 
 const Quiz = db.quiz;
 
-exports.updateQuiz = (req, res) => {
+exports.deleteQuiz = (req, res) => {
 
     let _id = req.params.id;
 
-    let { title, description, quiz } = req.body;
 
-    Quiz.updateOne({ _id }, { title, description, quiz }).exec((err, quiz) => {
+    Quiz.deleteOne({ _id }).exec((err, quiz) => {
 
         if (err) {
             console.log(err);
