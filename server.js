@@ -10,7 +10,7 @@ const getQuizByTitle = require("./Routers/getQuizByTitle");
 const getQuizById = require("./Routers/getQuizById");
 const submitQuiz = require("./Routers/submitQuiz");
 const getQuizStat =require("./Routers/getQuizStat");
-
+const updateQuiz = require("./Routers/updateQuiz");
 
 const app = express();
 const port = 3000;
@@ -27,6 +27,7 @@ app.use(getQuizByTitle);
 app.use(getQuizById);
 app.use(submitQuiz);
 app.use(getQuizStat);
+app.use(updateQuiz);
 
 // connect to mongoDB by using mongoose
 db.mongoose
