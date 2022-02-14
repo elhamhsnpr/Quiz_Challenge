@@ -4,16 +4,15 @@ const Quiz = db.quiz;
 
 exports.createQuiz = (req, res) => {
 
-    // let quizID = 0;
+
 
     const quiz = new Quiz({
     
         title: req.body.title,
         description: req.body.description,
         quiz: req.body.quiz,
-        userId: req.token.id
-
-
+        userId: req.token.id,
+        score: req.body.score,
 
     });
 

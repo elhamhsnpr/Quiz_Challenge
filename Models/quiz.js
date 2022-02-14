@@ -5,13 +5,21 @@ const Quiz = mongoose.model(
     "Quiz",
 
     new mongoose.Schema({
-        
+
         title: {
             type: String,
             required: true,
         },
         description: {
             type: String
+        },
+        score: {
+            type: Number,
+            required: true,
+        },
+        completion:{
+            type:Number,
+            required:true
         },
         quiz: [{
 
@@ -38,7 +46,8 @@ const Quiz = mongoose.model(
         userId: {
             type: mongoose.Schema.Types.ObjectId,
             ref: User
-        }
+        },
+       
 
     })
 

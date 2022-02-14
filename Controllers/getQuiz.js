@@ -7,7 +7,7 @@ exports.getQuiz= (req, res) => {
 
     const { page = 1, limit = 1 } = req.query;
 
-    Quiz.find().select('_id title description ').limit(limit * 1).skip((page - 1) * limit).exec((err, result) => {
+    Quiz.find().select('_id title description score ').limit(limit * 1).skip((page - 1) * limit).exec((err, result) => {
 
         if (err) {
             console.log(err);

@@ -18,10 +18,12 @@ const QuizResult = mongoose.model(
 
         },
 
-        quizresult: {  }
+        quizResult: {},
 
-
-
+        attendeeScore: {
+            type: Number
+        },
+       
     })
 
 );
